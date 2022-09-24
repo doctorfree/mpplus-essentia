@@ -1,0 +1,86 @@
+# Maintainer: Ronald Record <github@ronrecord.com>
+
+pkgname=mpplus-essentia
+pkgver=v1.0.0r1
+pkgrel=1
+pkgdesc="NCurses character based MPD client"
+arch=('x86_64' 'armv7h')
+url="https://github.com/doctorfree/mpplus-essentia"
+license=('GPL2')
+
+depends=(boost-libs libcurl-compat libmpdclient ncurses readline taglib mpc python python-pip fftw)
+makedepends=(boost git pandoc zip)
+install=mpplus-essentia.install
+source=("${pkgname}::git+https://github.com/doctorfree/mpplus-essentia.git#tag=${pkgver}")
+sha256sums=('SKIP')
+
+prepare() {
+  cd "${srcdir}/${pkgname}"
+}
+
+build() {
+  cd "${srcdir}/${pkgname}"
+  # Build essentia
+  if [ -x scripts/build-essentia.sh ]
+  then
+    scripts/build-essentia.sh
+  else
+    python3 waf configure --prefix=/usr \
+                          --build-static \
+                          --with-gaia \
+                          --with-python \
+                          --with-examples
+    python3 waf
+  fi
+}
+
+package() {
+  cd "${srcdir}/${pkgname}"
+  destdir=usr
+  for dir in "${destdir}" "${destdir}/share" \
+    "${destdir}/share/doc" \
+    "${destdir}/share/doc/${pkgname}" \
+    "${destdir}/share/${pkgname}"
+  do
+    [ -d ${pkgdir}/${dir} ] || mkdir ${pkgdir}/${dir}
+  done
+
+  for dir in bin
+  do
+    [ -d ${pkgdir}/${destdir}/${dir} ] && rm -rf ${pkgdir}/${destdir}/${dir}
+  done
+
+  # cp essentia/build/src/examples/essentia_streaming_extractor_music \
+  #           ${pkgdir}/${destdir}/bin
+  # cp essentia/build/src/examples/essentia_streaming_extractor_music_svm \
+  #           ${pkgdir}/${destdir}/bin
+  # Install essentia
+  if [ -x scripts/build-essentia.sh ]
+  then
+    scripts/build-essentia.sh -i -d "${pkgdir}"
+  else
+    python3 waf install --destdir="${pkgdir}"
+  fi
+
+  cp ACKNOWLEDGEMENTS ${pkgdir}/${destdir}/share/doc/${pkgname}
+  cp AUTHORS ${pkgdir}/${destdir}/share/doc/${pkgname}
+  cp Changelog ${pkgdir}/${destdir}/share/doc/${pkgname}
+  cp COPYING.txt ${pkgdir}/${destdir}/share/doc/${pkgname}
+  cp README.md ${pkgdir}/${destdir}/share/doc/${pkgname}
+  cp "Essentia Licensing.txt" ${pkgdir}/${destdir}/share/doc/${pkgname}
+  cp FAQ.md ${pkgdir}/${destdir}/share/doc/${pkgname}
+  cp VERSION ${pkgdir}/${destdir}/share/doc/${pkgname}
+  pandoc -f gfm README.md | \
+    tee ${pkgdir}/${destdir}/share/doc/${pkgname}/README.html > /dev/null
+  gzip -9 ${pkgdir}/${destdir}/share/doc/${pkgname}/Changelog
+
+  [ -f .gitignore ] && {
+    while read ignore
+    do
+        rm -f ${pkgdir}/${destdir}/${ignore}
+    done < .gitignore
+  }
+
+  chmod 755 ${pkgdir}/${destdir}/bin/* \
+            ${pkgdir}/${destdir}/bin \
+}

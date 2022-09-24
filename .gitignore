@@ -88,3 +88,16 @@ packaging/win32_3rdparty/include
 dist
 essentia.egg-info
 tmp
+pkg/dist/arch/*
+pkg/dist/centos/*
+pkg/dist/fedora/*
+pkg/dist/rpi/*
+releases/*
+tmp/*
+tools/*
+# vim files
+.*.sw[a-z]
+*.un~
+Session.vim
+.netrwhist
+tmux*log
