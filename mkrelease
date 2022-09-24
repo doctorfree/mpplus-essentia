@@ -1,10 +1,10 @@
 #!/bin/bash
 
-[ -f VERSION ] || {
-    echo "VERSION file missing. Exiting."
+[ -f MPPVERSION ] || {
+    echo "MPPVERSION file missing. Exiting."
     exit 1
 }
-. ./VERSION
+. ./MPPVERSION
 
 usage() {
     printf "\nUsage: mkrelease [-c] [-d] [-p] [-u]"

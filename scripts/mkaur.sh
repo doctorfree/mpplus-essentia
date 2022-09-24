@@ -29,9 +29,9 @@ else
   SRC="${HOME}/src/${PKG_NAME}"
 fi
 
-[ -f "${SRC}/VERSION" ] || {
-  [ -f "/builds/doctorfree/${PKG_NAME}/VERSION" ] || {
-    echo "${SRC}/VERSION does not exist. Exiting."
+[ -f "${SRC}/MPPVERSION" ] || {
+  [ -f "/builds/doctorfree/${PKG_NAME}/MPPVERSION" ] || {
+    echo "${SRC}/MPPVERSION does not exist. Exiting."
     exit 1
   }
   SRC="/builds/doctorfree/${PKG_NAME}"
@@ -39,7 +39,7 @@ fi
 # SUDO=
 }
 
-. "${SRC}/VERSION"
+. "${SRC}/MPPVERSION"
 PKG_VER=${VERSION}
 PKG_REL=${RELEASE}
 
@@ -57,7 +57,7 @@ cd "${SRC}"
 
 ${SUDO} rm -rf ${PKG}
 mkdir ${PKG}
-cp VERSION ${PKG}/VERSION
+cp MPPVERSION ${PKG}/MPPVERSION
 cp pkg/aur/PKGBUILD ${PKG}/PKGBUILD
 cp pkg/aur/${PKG}.install ${PKG}/${PKG}.install
 cp pkg/aur/.SRCINFO ${PKG}/.SRCINFO

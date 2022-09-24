@@ -70,6 +70,7 @@ package() {
   cp "Essentia Licensing.txt" ${pkgdir}/${destdir}/share/doc/${pkgname}
   cp FAQ.md ${pkgdir}/${destdir}/share/doc/${pkgname}
   cp VERSION ${pkgdir}/${destdir}/share/doc/${pkgname}
+  cp MPPVERSION ${pkgdir}/${destdir}/share/doc/${pkgname}
   pandoc -f gfm README.md | \
     tee ${pkgdir}/${destdir}/share/doc/${pkgname}/README.html > /dev/null
   gzip -9 ${pkgdir}/${destdir}/share/doc/${pkgname}/Changelog

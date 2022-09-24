@@ -1,17 +1,17 @@
 # Maintainer: Ronald Record <github@ronrecord.com>
 
-# Get the version and release from the VERSION file
+# Get the version and release from the MPPVERSION file
 # Move to use of pkgver() function with something like this:
 #   git describe --long | sed 's/^v//;s/\([^-]*-g\)/r\1/;s/-/./g'
 #
-if [ -f VERSION ]
+if [ -f MPPVERSION ]
 then
-  . ./VERSION
+  . ./MPPVERSION
 else
   [ "${SRC}" ] || SRC="${HOME}/src/mpplus-essentia"
-  if [ -f ${SRC}/VERSION ]
+  if [ -f ${SRC}/MPPVERSION ]
   then
-    . ${SRC}/VERSION
+    . ${SRC}/MPPVERSION
   else
     VERSION=1.0.0
     RELEASE=1
@@ -89,6 +89,7 @@ package() {
   cp "Essentia Licensing.txt" ${pkgdir}/${destdir}/share/doc/${pkgname}
   cp FAQ.md ${pkgdir}/${destdir}/share/doc/${pkgname}
   cp VERSION ${pkgdir}/${destdir}/share/doc/${pkgname}
+  cp MPPVERSION ${pkgdir}/${destdir}/share/doc/${pkgname}
   pandoc -f gfm README.md | \
     tee ${pkgdir}/${destdir}/share/doc/${pkgname}/README.html > /dev/null
   gzip -9 ${pkgdir}/${destdir}/share/doc/${pkgname}/Changelog
