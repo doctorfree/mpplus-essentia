@@ -74,13 +74,6 @@ package() {
     tee ${pkgdir}/${destdir}/share/doc/${pkgname}/README.html > /dev/null
   gzip -9 ${pkgdir}/${destdir}/share/doc/${pkgname}/Changelog
 
-  [ -f .gitignore ] && {
-    while read ignore
-    do
-        rm -f ${pkgdir}/${destdir}/${ignore}
-    done < .gitignore
-  }
-
   chmod 755 ${pkgdir}/${destdir}/bin/* \
             ${pkgdir}/${destdir}/bin
 }
