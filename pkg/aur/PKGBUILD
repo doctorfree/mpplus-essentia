@@ -102,5 +102,5 @@ package() {
   }
 
   chmod 755 ${pkgdir}/${destdir}/bin/* \
-            ${pkgdir}/${destdir}/bin \
+            ${pkgdir}/${destdir}/bin
 }
