@@ -26,9 +26,8 @@ pkgdesc="NCurses character based MPD client"
 arch=('x86_64' 'armv7h')
 url="https://github.com/doctorfree/mpplus-essentia"
 license=('AGPL3')
-
-depends=(boost-libs libcurl-compat libmpdclient ncurses readline taglib mpc python python-pip fftw)
-makedepends=(boost git pandoc zip)
+depends=(taglib ffmpeg4.4 python python-numpy python-six eigen fftw clang libsamplerate chromaprint libyaml)
+makedepends=(git pandoc zip)
 install=mpplus-essentia.install
 source=("${pkgname}::git+https://github.com/doctorfree/mpplus-essentia.git")
 sha256sums=('SKIP')
