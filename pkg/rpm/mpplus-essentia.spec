@@ -6,7 +6,7 @@ Requires:   taglib, python3-devel, libchromaprint-devel, util-linux, libavdevice
 URL:        https://github.com/doctorfree/mpplus-essentia
 Vendor:     Doctorwhen's Bodacious Laboratory
 Packager:   ronaldrecord@gmail.com
-License     : GPLv2+
+License     : AGPL3
 Summary     : Acoustic metadata analysis and extraction
 
 %global __os_install_post %{nil}
