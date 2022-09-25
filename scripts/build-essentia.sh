@@ -105,11 +105,13 @@ tensor=
 [ "${PREFIX}" ] && prefix="--prefix=${PREFIX}"
 [ "${TENSOR}" ] && tensor="--with-tensorflow"
 
-[ "${INSTALL}" ] || {
-  [ -x build/src/examples/essentia_streaming_extractor_music ] && {
-    echo "Essentia binaries already built"
-    exit 0
-  }
+[ -x build/src/examples/essentia_streaming_extractor_music ] && {
+  echo "Essentia binaries already built"
+  if [ "${INSTALL}" ]
+  then
+    python3 waf install ${destdir}
+  fi
+  exit 0
 }
 
 PKGPATH=`pkg-config --variable pc_path pkg-config`

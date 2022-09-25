@@ -42,7 +42,7 @@ else
                         --build-static \
                         --with-gaia \
                         --with-python \
-                        --with-examples
+                        --with-example=streaming_extractor_music
   python3 waf
 fi
 
@@ -88,12 +88,8 @@ ${SUDO} cp MPPVERSION ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}
 ${SUDO} pandoc -f gfm README.md | ${SUDO} tee ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/README.html > /dev/null
 ${SUDO} gzip -9 ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/Changelog
 
-${SUDO} chmod 644 ${OUT_DIR}/${DESTDIR}/share/man/*/*
-${SUDO} chmod 644 ${OUT_DIR}/${DESTDIR}/share/menu/*
 ${SUDO} chmod 755 ${OUT_DIR}/${DESTDIR}/bin/* \
                   ${OUT_DIR}/${DESTDIR}/bin \
-                  ${OUT_DIR}/${DESTDIR}/share/man \
-                  ${OUT_DIR}/${DESTDIR}/share/man/* \
                   ${OUT_DIR}/${DESTDIR}/share/${PKG}/scripts/*
 ${SUDO} chown -R root:root ${OUT_DIR}/${DESTDIR}
 

@@ -29,7 +29,7 @@ build() {
                           --build-static \
                           --with-gaia \
                           --with-python \
-                          --with-examples
+                          --with-example=streaming_extractor_music
     python3 waf
   fi
 }

@@ -55,7 +55,7 @@ else
                         --build-static \
                         --with-gaia \
                         --with-python \
-                        --with-examples
+                        --with-example=streaming_extractor_music
   python3 waf
 fi
 
@@ -64,8 +64,8 @@ mkdir dist
 
 [ -d ${OUT_DIR} ] && rm -rf ${OUT_DIR}
 mkdir ${OUT_DIR}
-cp -a pkg/debian ${OUT_DIR}/DEBIAN
-chmod 755 ${OUT_DIR} ${OUT_DIR}/DEBIAN ${OUT_DIR}/DEBIAN/*
+mkdir ${OUT_DIR}/DEBIAN
+chmod 755 ${OUT_DIR} ${OUT_DIR}/DEBIAN
 
 echo "Package: ${PKG}
 Version: ${PKG_VER}-${PKG_REL}
@@ -84,8 +84,7 @@ Description: Essentia audio analysis tool -- feature extractors
  meaning you can control it from within Python, and write scripts that
  use Essentia features (just as you would in Matlab).
  .
- This package contains command-line feature extractors based on 
- Essentia." > ${OUT_DIR}/DEBIAN/control
+ This package contains command-line feature extractors based on Essentia." > ${OUT_DIR}/DEBIAN/control
 
 chmod 644 ${OUT_DIR}/DEBIAN/control
 
@@ -125,7 +124,7 @@ ${SUDO} cp MPPVERSION ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}
 ${SUDO} pandoc -f gfm README.md | ${SUDO} tee ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/README.html > /dev/null
 ${SUDO} gzip -9 ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/Changelog
 
-${SUDO} chmod 755 ${OUT_DIR}/${DESTDIR}/bin/* ${OUT_DIR}/${DESTDIR}/bin \
+${SUDO} chmod 755 ${OUT_DIR}/${DESTDIR}/bin/* ${OUT_DIR}/${DESTDIR}/bin
 ${SUDO} chown -R root:root ${OUT_DIR}/${DESTDIR}
 
 cd dist
