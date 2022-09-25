@@ -89,8 +89,7 @@ Description: Essentia audio analysis tool -- feature extractors
 
 chmod 644 ${OUT_DIR}/DEBIAN/control
 
-for dir in "${DESTDIR}" "${DESTDIR}/share" "${DESTDIR}/share/man" \
-           "${DESTDIR}/share/applications" "${DESTDIR}/share/doc" \
+for dir in "${DESTDIR}" "${DESTDIR}/share" "${DESTDIR}/share/doc" \
            "${DESTDIR}/share/doc/${PKG}" "${DESTDIR}/share/${PKG}"
 do
     [ -d ${OUT_DIR}/${dir} ] || ${SUDO} mkdir ${OUT_DIR}/${dir}
@@ -123,16 +122,8 @@ ${SUDO} cp "Essentia Licensing.txt" ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}
 ${SUDO} cp FAQ.md ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}
 ${SUDO} cp VERSION ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}
 ${SUDO} cp MPPVERSION ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}
-${SUDO} pandoc -f gfm README.md | \
-  ${SUDO} tee ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/README.html > /dev/null
+${SUDO} pandoc -f gfm README.md | ${SUDO} tee ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/README.html > /dev/null
 ${SUDO} gzip -9 ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/Changelog
-
-[ -f .gitignore ] && {
-    while read ignore
-    do
-        ${SUDO} rm -f ${OUT_DIR}/${DESTDIR}/${ignore}
-    done < .gitignore
-}
 
 ${SUDO} chmod 755 ${OUT_DIR}/${DESTDIR}/bin/* ${OUT_DIR}/${DESTDIR}/bin \
 ${SUDO} chown -R root:root ${OUT_DIR}/${DESTDIR}
