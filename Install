@@ -22,13 +22,13 @@ NORMAL=$(tput sgr0)
 PKG_AVAILABLE=
 PKG_SELECTED=
 
-[ -f "${SRC}/${SRC_NAME}/VERSION" ] || {
-  echo "Missing VERSION file: ${SRC}/${SRC_NAME}/VERSION"
+[ -f "${SRC}/${SRC_NAME}/MPPVERSION" ] || {
+  echo "Missing MPPVERSION file: ${SRC}/${SRC_NAME}/MPPVERSION"
   echo "Exiting"
   exit 1
 }
 
-. "${SRC}/${SRC_NAME}/VERSION"
+. "${SRC}/${SRC_NAME}/MPPVERSION"
 PKG_VER=${VERSION}
 PKG_REL=${RELEASE}
 
