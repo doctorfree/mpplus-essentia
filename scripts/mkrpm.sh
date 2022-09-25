@@ -1,7 +1,7 @@
 #!/bin/bash
-PKG="essentia"
-SRC_NAME="essentia"
-PKG_NAME="essentia"
+PKG="mpplus-essentia"
+SRC_NAME="mpplus-essentia"
+PKG_NAME="mpplus-essentia"
 DESTDIR="usr"
 SRC=${HOME}/src
 SUDO=sudo
