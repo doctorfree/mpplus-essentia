@@ -221,9 +221,9 @@ script in the mpplus-essentia source directory:
 
 Quick start using Python:
 - http://essentia.upf.edu/documentation/essentia_python_tutorial.html
-- [Jupyter Notebook Essentia tutorial](/src/examples/tutorial/essentia_python_tutorial.ipynb)
 
 Command-line tools to compute common music descriptors:
+- [doc/sphinxdoc/streaming_extractor_music.rst](doc/sphinxdoc/streaming_extractor_music.rst)
 - [doc/sphinxdoc/extractors_out_of_box.rst](doc/sphinxdoc/extractors_out_of_box.rst)
 
 ## Asking for help
@@ -251,6 +251,12 @@ scripts/install-dev-env.sh
 ```
 
 These steps are detailed below.
+
+**[Note:]** The mpplus-essentia project builds only the
+`essentia_streaming_extractor_music` binary. To build all of the Essentia example
+command line applications, it is necessary to modify `scripts/build-essentia.sh`
+(or `PKGBUILD` on Arch Linux) and replace `--with-example=streaming_extractor_music`
+with `--with-examples`.
 
 ### Clone mpplus-essentia repository
 
