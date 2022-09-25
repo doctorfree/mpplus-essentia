@@ -31,6 +31,7 @@ then
         libavcodec-dev libavformat-dev libavutil-dev libswresample-dev \
         libsamplerate0-dev libtag1-dev libchromaprint-dev \
         autotools-dev autoconf libtool fftw-dev \
+        qtbase5-dev qtchooser qt5-qmake qtbase5-dev-tools \
         libyaml-dev python3-dev pkg-config"
   if [ "$1" == "-r" ]
   then
@@ -42,7 +43,7 @@ else
   if [ "${arch}" ]
   then
     PKGS="base-devel eigen fftw clang ffmpeg4.4 libsamplerate taglib \
-          chromaprint libyaml python python-numpy python-six"
+          qt5-base qt5-tools chromaprint libyaml python python-numpy python-six"
     if [ "$1" == "-r" ]
     then
       sudo pacman -Rs ${PKGS}
@@ -69,7 +70,7 @@ else
       PKGS="fftw3-devel libtool automake llvm-devel SDL2-devel \
             eigen3-devel libyaml-devel clang-devel libchromaprint-devel \
             python-devel python3-devel python3-yaml python3-six \
-            taglib-devel libsamplerate-devel"
+            qt5-qtbase-devel taglib-devel libsamplerate-devel"
       if [ "$1" == "-r" ]
       then
         sudo ${PINS} -y remove compat-ffmpeg4-devel compat-ffmpeg4
