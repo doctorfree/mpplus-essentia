@@ -1,15 +1,16 @@
 #!/bin/bash
 #
-# build - compile and optionally install essentia
+# build - compile and optionally install mpplus-essentia components
 #
 
 usage() {
-    printf "\nUsage: ./build [-i] [-d destdir] [-p prefix] [-u]"
+    printf "\nUsage: ./build [-i] [-d destdir] [-p prefix] [-u] project [project2 ...]"
     printf "\nWhere:"
     printf "\n\t-i indicates install"
     printf "\n\t-d destdir specifies installation destdir (default /)"
     printf "\n\t-p prefix specifies installation prefix (default /usr)"
     printf "\n\t-u displays this usage message and exits\n"
+    printf "\n'project' can be 'essentia' or 'gaia'\n"
     exit 1
 }
 
@@ -34,9 +35,12 @@ while getopts "d:ip:u" flag; do
 done
 shift $(( OPTIND - 1 ))
 
-if [ -x scripts/build-essentia.sh ]
-then
-  scripts/build-essentia.sh ${INSTALL} ${DESTDIR} ${PREFIX}
-else
-  echo "ERROR: Unrecognized project 'essentia'. No build script."
-fi
+for project in $*
+do
+  if [ -x scripts/build-${project}.sh ]
+  then
+    scripts/build-${project}.sh ${INSTALL} ${DESTDIR} ${PREFIX}
+  else
+    echo "ERROR: Unrecognized project ${project}. No build script."
+  fi
+done
