@@ -15,6 +15,29 @@ sha256sums=('SKIP')
 
 prepare() {
   cd "${srcdir}/${pkgname}"
+  [ -f /usr/include/gaia2/gaia.h ] && [ -f /usr/lib/libgaia2.a ] || {
+    # Need to install Gaia, an Essentia build dependency
+    PROJ=gaia
+    prefix="--prefix=/usr"
+
+    [ -d ${PROJ} ] && rm -rf ${PROJ}
+    git clone https://github.com/MTG/gaia.git
+
+    cd ${PROJ}
+    git switch qt5
+
+    # Prior to configure, determine SSE2 support and set CXXFLAGS
+    grep sse2 /proc/cpuinfo > /dev/null || {
+      # Remove -msse2 from CXXFLAGS
+      cat wscript | sed -e "s/'-O2', '-msse2'/'-O2'/" > /tmp/wsc$$
+      cp /tmp/wsc$$ wscript
+      rm -f /tmp/wsc$$
+    }
+
+    ./waf configure ${prefix} --with-python-bindings --with-asserts
+    ./waf
+    sudo ./waf install
+  }
 }
 
 build() {
