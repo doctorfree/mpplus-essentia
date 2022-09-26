@@ -7,6 +7,7 @@ This release of mpplus-essentia adds support for:
 * Installation as a separate standalone package on multiple platforms
 * Create packaging for Arch Linux, CentOS, Fedora, Ubuntu, and Raspberry Pi OS
 * Integrated features and customizations from MusicPlayerPlus
+* Add pre-trained support vector machine (SVM) models to release packages
 
 ## Installation
 
@@ -15,19 +16,19 @@ Download the [latest Debian, Arch, or RPM package format release](https://github
 Install the package on Debian based systems by executing the command:
 
 ```bash
-sudo apt install ./mpplus-essentia_.0.0-1.amd64.deb
+sudo apt install ./mpplus-essentia_1.0.1-1.amd64.deb
 ```
 
 or, on a Raspberry Pi:
 
 ```bash
-sudo apt install ./mpplus-essentia_.0.0-1.armhf.deb
+sudo apt install ./mpplus-essentia_1.0.1-1.armhf.deb
 ```
 
 Install the package on Arch Linux based systems by executing the command:
 
 ```bash
-sudo pacman -U ./mpplus-essentia_.0.0-1-x86_64.pkg.tar.zst
+sudo pacman -U ./mpplus-essentia_1.0.1-1-x86_64.pkg.tar.zst
 ```
 
 Install the package on RPM based systems by executing one of the following commands.
@@ -35,13 +36,13 @@ Install the package on RPM based systems by executing one of the following comma
 On Fedora Linux:
 
 ```bash
-sudo yum localinstall ./mpplus-essentia_.0.0-1.fc36.x86_64.rpm
+sudo yum localinstall ./mpplus-essentia_1.0.1-1.fc36.x86_64.rpm
 ```
 
 On CentOS Linux:
 
 ```bash
-sudo yum localinstall ./mpplus-essentia_.0.0-1.el8.x86_64.rpm
+sudo yum localinstall ./mpplus-essentia_1.0.1-1.el8.x86_64.rpm
 ```
 
 ### PKGBUILD Installation
@@ -110,4 +111,4 @@ Changes in version 1.0.1 release 1 include:
 * Create packaging for Arch Linux, CentOS, Fedora, Ubuntu, and Raspberry Pi OS
 * Inclusion of support vector machine (SVM) models
 
-See [CHANGELOG.md](https://github.com/doctorfree/mpplus-essentia/blob/master/CHANGELOG.md) for a full list of changes in every mpplus-essentia release
+See [Changelog](https://github.com/doctorfree/mpplus-essentia/blob/master/Changelog) for a full list of changes in every mpplus-essentia release
