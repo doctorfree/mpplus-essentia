@@ -65,6 +65,11 @@ Documentation online: http://essentia.upf.edu
 
 ### Installing ffmpeg on RPM based systems
 
+**[Note:]** The following installation procedure is only necessary on RPM
+based systems like Fedora and CentOS when `mpplus-essentia` is being deployed
+as a standalone package. When deployed in conjunction with MusicPlayerPlus
+this procedure is automatically performed during initialization with `mppinit`.
+
 Essentia depends on the `ffmpeg` libraries. On RPM based systems like Fedora
 and CentOS the RPM Fusion repositories must be enabled and the appropriate
 `ffmpeg` package installed. See

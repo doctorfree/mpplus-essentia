@@ -3,7 +3,7 @@ Version:    %{_version}
 Release:    %{_release}%{?dist}
 BuildArch:  x86_64
 AutoReqProv: no
-Requires:   taglib, python3-devel, libchromaprint-devel, util-linux
+Requires:   taglib, python3-devel, fftw-libs, libchromaprint-devel, util-linux
 URL:        https://github.com/doctorfree/mpplus-essentia
 Vendor:     Doctorwhen's Bodacious Laboratory
 Packager:   ronaldrecord@gmail.com
