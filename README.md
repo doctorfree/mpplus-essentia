@@ -25,7 +25,7 @@ to integrate with each other including
 1. [Removal](#removal)
 1. [Quick start](#quick-start)
 1. [Asking for help](#asking-for-help)
-1. [Building mpplus-essentia from source](#building-mpplus-essentia-from source)
+1. [Building essentia from source](#building-essentia-from source)
 1. [Contributing](#contributing)
 
 ## Overview
@@ -232,9 +232,9 @@ Command-line tools to compute common music descriptors:
 
 [Create an issue on github](https://github.com/doctorfree/mpplus-essentia/issues)
 
-## Building mpplus-essentia from source
+## Building essentia from source
 
-mpplus-essentia can be compiled, packaged, and installed from the source code
+Essentia can be compiled, packaged, and installed from the source code
 repository. This should be done as a normal user with `sudo` privileges:
 
 ```
