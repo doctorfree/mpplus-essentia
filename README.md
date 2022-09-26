@@ -20,6 +20,7 @@ to integrate with each other including
 
 1. [Overview](#overview)
 1. [Dependencies](#dependencies)
+    1. [Installing ffmpeg on RPM based systems](installing-ffmpeg-on-rpm-based-systems)
 1. [Requirements](#requirements)
 1. [Installation](#installation)
 1. [Removal](#removal)
@@ -62,7 +63,43 @@ Documentation online: http://essentia.upf.edu
 * [LibYAML](http://pyyaml.org/wiki/LibYAML)
 * [Chromaprint](https://github.com/acoustid/chromaprint)
 
-All dependencies are automatically installed if not already present.
+### Installing ffmpeg on RPM based systems
+
+Essentia depends on the `ffmpeg` libraries. On RPM based systems like Fedora
+and CentOS the RPM Fusion repositories must be enabled and the appropriate
+`ffmpeg` package installed. See
+[RPM Fusion Configuration](https://rpmfusion.org/Configuration) to enable
+RPM Fusion free and nonfree repositories. For example:
+
+```
+# On Fedora
+sudo dnf install https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+sudo dnf config-manager --set-enabled rpmfusion-free
+sudo dnf config-manager --set-enabled rpmfusion-nonfree
+sudo dnf update
+
+# On CentOS Stream 8
+sudo dnf install --nogpgcheck https://dl.fedoraproject.org/pub/epel/epel-release-latest-$(rpm -E %rhel).noarch.rpm
+sudo dnf install --nogpgcheck https://mirrors.rpmfusion.org/free/el/rpmfusion-free-release-$(rpm -E %rhel).noarch.rpm https://mirrors.rpmfusion.org/nonfree/el/rpmfusion-nonfree-release-$(rpm -E %rhel).noarch.rpm
+sudo dnf config-manager --enable powertools
+sudo dnf config-manager --set-enabled rpmfusion-free-updates
+sudo dnf config-manager --set-enabled rpmfusion-nonfree-updates
+sudo dnf update
+```
+
+Once enabled, install `ffmpeg`:
+
+```
+# On Fedora
+sudo dnf --allowerasing install compat-ffmpeg4
+
+# On CentOS
+sudo dnf --allowerasing install ffmpeg
+```
+
+On Debian and Arch based systems the `ffmpeg` libraries are automatically installed.
+
+All other dependencies are automatically installed if not already present.
 
 ## Requirements
 
@@ -154,6 +191,9 @@ or
 ```console
 sudo rpm -i ./mpplus-essentia_<version>-<release>.x86_64.rpm
 ```
+
+**[Note]** Essentia depends on the `ffmpeg` libraries. See the
+[Dependencies](#dependencies) section above to install `ffmpeg`.
 
 ### Arch Package installation
 
