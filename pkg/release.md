@@ -1,6 +1,6 @@
-[Essentia](https://github.com/doctorfree/mpplus-essentia#readme) is an open source NCurses character-based Music Player Daemon (MPD) client inspired by `ncmpcpp`. The `mpcplus` MPD client is customized for integration with the [MusicPlayerPlus project](https://github.com/doctorfree/MusicPlayerPlus#readme) and the [Mppcava spectrum visualizer](https://github.com/doctorfree/mppcava#readme).
+[Essentia](https://essentia.upf.edu/index.html) is an open-source C++ library for audio analysis and audio-based music information retrieval. It contains an extensive collection of algorithms, including audio input/output functionality, standard digital signal processing blocks, statistical characterization of data, a large variety of spectral, temporal, tonal, and high-level music descriptors, and tools for inference with deep learning models.
 
-**[Important Note:]** This initial release of the `mpplus-essentia` package is intended to serve as a test release for future integration with `MusicPlayerPlus`. Although it is a fully featured `mpcplus`, MusicPlayerPlus integration is still in development and will not be available until MusicPlayerPlus version 3 is released. To get the fully integrated features of `mpcplus` at this time, install [MusicPlayerPlus version 2](https://github.com/doctorfree/MusicPlayerPlus/releases) rather than this package.
+**[Important Note:]** This initial release of the `mpplus-essentia` package is intended to serve as a test release for future integration with `MusicPlayerPlus`. Integration with MusicPlayerPlus is still in development and will not be available until MusicPlayerPlus version 3 is released. To get the fully integrated features of `mpplus-essentia` at this time, install [MusicPlayerPlus version 2](https://github.com/doctorfree/MusicPlayerPlus/releases) rather than this package.
 
 This release of mpplus-essentia adds support for:
 
@@ -54,14 +54,6 @@ tar xzf mpplus-essentia-pkgbuild-1.0.1-1.tar.gz
 cd mpplus-essentia
 makepkg --force --log --cleanbuild --noconfirm --syncdeps
 ```
-
-## Configuration
-
-**[TODO:]** Instructions on how to configure MPD fifo
-
-If the `mpcinit` mpcplus initialization did not correctly detect the music library location then edit `/etc/mpd.conf` or `~/.config/mpd/mpd.conf`, set the `music_directory` correctly, and run `mpcinit sync`.
-
-See the [mpcplus README](https://github.com/doctorfree/mpcplus#readme) for additional configuration info.
 
 ## Removal
 
