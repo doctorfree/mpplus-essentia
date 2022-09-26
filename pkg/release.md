@@ -46,10 +46,10 @@ sudo yum localinstall ./mpplus-essentia_.0.0-1.el8.x86_64.rpm
 
 ### PKGBUILD Installation
 
-To install on a Raspberry Pi running Arch Linux, mpplus-essentia must be built from sources using the Arch PKGBUILD files provided in `mpplus-essentia-pkgbuild-1.0.0-1.tar.gz`. This process can be performed on any `x86_64` or `armv7h ` architecture system running Arch Linux. An `x86_64` architecture precompiled package is supplied (see above). To rebuild this package from sources, extract `mpplus-essentia-pkgbuild-1.0.0-1.tar.gz` and use the `makepkg` command to download the sources, build the binaries, and create the installation package:
+To install on a Raspberry Pi running Arch Linux, mpplus-essentia must be built from sources using the Arch PKGBUILD files provided in `mpplus-essentia-pkgbuild-1.0.1-1.tar.gz`. This process can be performed on any `x86_64` or `armv7h ` architecture system running Arch Linux. An `x86_64` architecture precompiled package is supplied (see above). To rebuild this package from sources, extract `mpplus-essentia-pkgbuild-1.0.1-1.tar.gz` and use the `makepkg` command to download the sources, build the binaries, and create the installation package:
 
 ```
-tar xzf mpplus-essentia-pkgbuild-1.0.0-1.tar.gz
+tar xzf mpplus-essentia-pkgbuild-1.0.1-1.tar.gz
 cd mpplus-essentia
 makepkg --force --log --cleanbuild --noconfirm --syncdeps
 ```
@@ -103,10 +103,11 @@ The `mkpkg` script detects the platform and creates an installable package in th
 
 ## Changelog
 
-Changes in version 1.0.0 release 1 include:
+Changes in version 1.0.1 release 1 include:
 
 * Installation as a separate standalone package on multiple platforms
 * Integrated features and customizations from MusicPlayerPlus
 * Create packaging for Arch Linux, CentOS, Fedora, Ubuntu, and Raspberry Pi OS
+* Inclusion of support vector machine (SVM) models
 
 See [CHANGELOG.md](https://github.com/doctorfree/mpplus-essentia/blob/master/CHANGELOG.md) for a full list of changes in every mpplus-essentia release
