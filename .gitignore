@@ -85,6 +85,7 @@ packaging/win32_3rdparty/bin
 packaging/win32_3rdparty/share
 packaging/win32_3rdparty/lib
 packaging/win32_3rdparty/include
+gaia
 dist
 essentia.egg-info
 tmp
