@@ -39,5 +39,7 @@ cp -a %{_sourcedir}/usr %{buildroot}/usr
 %exclude %dir /usr/share/doc
 %exclude %dir /usr/share
 %exclude %dir /usr/bin
+%exclude %dir /usr/lib
+%exclude %dir /usr/lib64
 
 %changelog
