@@ -115,6 +115,7 @@ package() {
   pandoc -f gfm README.md | \
     tee ${pkgdir}/${destdir}/share/doc/${pkgname}/README.html > /dev/null
   gzip -9 ${pkgdir}/${destdir}/share/doc/${pkgname}/Changelog
+  cp -a share/svm_models ${pkgdir}/${destdir}/share/${pkgname}/svm_models
 
   chmod 755 ${pkgdir}/${destdir}/bin/* \
             ${pkgdir}/${destdir}/bin

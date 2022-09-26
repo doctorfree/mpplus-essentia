@@ -132,3 +132,4 @@ Essentia 2.0:
 
 Essentia 2.1:
  - First release with MusicPlayerPlus integration.
+ - Add pre-trained support vector machine (SVM) models to release packages.
