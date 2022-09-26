@@ -26,7 +26,7 @@ to integrate with each other including
 1. [Removal](#removal)
 1. [Quick start](#quick-start)
 1. [Asking for help](#asking-for-help)
-1. [Building essentia from source](#building-essentia-from source)
+1. [Building essentia from source](#building-essentia-from-source)
 1. [Contributing](#contributing)
 
 ## Overview
