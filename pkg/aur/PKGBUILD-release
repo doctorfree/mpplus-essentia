@@ -1,7 +1,7 @@
 # Maintainer: Ronald Record <github@ronrecord.com>
 
 pkgname=mpplus-essentia
-pkgver=v1.0.1r1
+pkgver=v1.0.1r2
 pkgrel=1
 pkgdesc="NCurses character based MPD client"
 arch=('x86_64' 'armv7h')

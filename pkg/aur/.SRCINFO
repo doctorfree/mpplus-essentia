@@ -1,6 +1,6 @@
 pkgbase = mpplus-essentia
 	pkgdesc = NCurses character based MPD client
-	pkgver = v1.0.1r1
+	pkgver = v1.0.1r2
 	pkgrel = 1
 	url = https://github.com/doctorfree/mpplus-essentia
 	install = mpplus-essentia.install
