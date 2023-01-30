@@ -219,6 +219,15 @@ Install the mpplus-essentia package by executing the command
 sudo pacman -U ./mpplus-essentia_<version>-<release>-x86_64.pkg.tar.zst
 ```
 
+Alternatively, an Arch Linux installation can be performed using the PKGBUILD
+files included in the essentia repository. To install using PKGBUILD:
+
+```shell
+cd packaging/aur
+makepkg
+sudo pacman -U ./mpplus-essentia_<version>-<release>-x86_64.pkg.tar.zst
+```
+
 ## Removal
 
 On Debian based Linux systems where the mpplus-essentia package was installed

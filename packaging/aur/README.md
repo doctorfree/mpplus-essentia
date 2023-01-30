@@ -26,15 +26,15 @@ makepkg
 After successfully building, to install:
 
 ```shell
-sudo pacman -U essentia-<version>-<release>-<architecture>.pkg.tar.zst
+sudo pacman -U mpplus-essentia-<version>-<release>-<architecture>.pkg.tar.zst
 ```
 
 If dependencies are not met the installation will report missing packages.
-These dependent packages must first be installed and the `essentia` package
-install with `pacman` repeated.
+These dependent packages must first be installed and the `mpplus-essentia`
+package install with `pacman` repeated.
 
 To uninstall:
 
 ```shell
-sudo pacman -R essentia
+sudo pacman -R mpplus-essentia
 ```

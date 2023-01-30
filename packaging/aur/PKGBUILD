@@ -1,6 +1,6 @@
 # Maintainer: Ronald Record <github@ronrecord.com>
 
-pkgname=essentia
+pkgname=mpplus-essentia
 pkgver=v2.0.1r2
 pkgrel=1
 pkgdesc="C++ library for audio analysis and audio-based music information retrieval"
