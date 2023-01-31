@@ -85,7 +85,6 @@ ${SUDO} cp "Essentia Licensing.txt" ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}
 ${SUDO} cp FAQ.md ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}
 ${SUDO} cp VERSION ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}
 ${SUDO} cp MPPVERSION ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}
-${SUDO} pandoc -f gfm README.md | ${SUDO} tee ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/README.html > /dev/null
 ${SUDO} gzip -9 ${OUT_DIR}/${DESTDIR}/share/doc/${PKG}/Changelog
 
 ${SUDO} cp -a share/svm_models ${OUT_DIR}/${DESTDIR}/share/${PKG}/svm_models

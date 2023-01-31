@@ -8,7 +8,6 @@ pkgbase = mpplus-essentia
 	arch = armv7h
 	license = AGPL3
 	makedepends = git
-	makedepends = pandoc
 	makedepends = zip
 	depends = taglib
 	depends = ffmpeg4.4

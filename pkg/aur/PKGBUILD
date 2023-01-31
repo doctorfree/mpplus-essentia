@@ -27,7 +27,7 @@ arch=('x86_64' 'armv7h')
 url="https://github.com/doctorfree/mpplus-essentia"
 license=('AGPL3')
 depends=(taglib ffmpeg4.4 python python-numpy python-six eigen fftw clang libsamplerate chromaprint libyaml)
-makedepends=(git pandoc zip)
+makedepends=(git zip)
 install=mpplus-essentia.install
 source=("${pkgname}::git+https://github.com/doctorfree/mpplus-essentia.git")
 sha256sums=('SKIP')
@@ -66,6 +66,15 @@ build() {
   then
     scripts/build-essentia.sh
   else
+    PKGPATH=`pkg-config --variable pc_path pkg-config`
+    [ -d /usr/lib/ffmpeg4.4/pkgconfig ] && {
+      PKGPATH="/usr/lib/ffmpeg4.4/pkgconfig:${PKGPATH}"
+    }
+    [ -d /usr/lib64/compat-ffmpeg4/pkgconfig ] && {
+      PKGPATH="/usr/lib64/compat-ffmpeg4/pkgconfig:${PKGPATH}"
+    }
+    export PKG_CONFIG_PATH="${PKGPATH}:/usr/lib/pkgconfig"
+
     python3 waf configure --prefix=/usr \
                           --build-static \
                           --with-gaia \
@@ -91,10 +100,6 @@ package() {
     [ -d ${pkgdir}/${destdir}/${dir} ] && rm -rf ${pkgdir}/${destdir}/${dir}
   done
 
-  # cp essentia/build/src/examples/essentia_streaming_extractor_music \
-  #           ${pkgdir}/${destdir}/bin
-  # cp essentia/build/src/examples/essentia_streaming_extractor_music_svm \
-  #           ${pkgdir}/${destdir}/bin
   # Install essentia
   if [ -x scripts/build-essentia.sh ]
   then
@@ -112,8 +117,6 @@ package() {
   cp FAQ.md ${pkgdir}/${destdir}/share/doc/${pkgname}
   cp VERSION ${pkgdir}/${destdir}/share/doc/${pkgname}
   cp MPPVERSION ${pkgdir}/${destdir}/share/doc/${pkgname}
-  pandoc -f gfm README.md | \
-    tee ${pkgdir}/${destdir}/share/doc/${pkgname}/README.html > /dev/null
   gzip -9 ${pkgdir}/${destdir}/share/doc/${pkgname}/Changelog
   cp -a share/svm_models ${pkgdir}/${destdir}/share/${pkgname}/svm_models
 

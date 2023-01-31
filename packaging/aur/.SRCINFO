@@ -1,4 +1,4 @@
-pkgbase = mpplus-essentia
+pkgbase = essentia-extractor
 	pkgdesc = C++ library for audio analysis and audio-based music information retrieval
 	pkgver = v2.1.0r1
 	pkgrel = 1
@@ -19,7 +19,7 @@ pkgbase = mpplus-essentia
 	depends = libsamplerate
 	depends = chromaprint
 	depends = libyaml
-	source = mpplus-essentia::git+https://github.com/doctorfree/mpplus-essentia.git
+	source = essentia-extractor::git+https://github.com/doctorfree/mpplus-essentia.git
 	sha256sums = SKIP
 
-pkgname = mpplus-essentia
+pkgname = essentia-extractor

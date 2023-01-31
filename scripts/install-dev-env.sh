@@ -37,7 +37,7 @@ then
   then
     sudo apt remove ${PKGS}
   else
-    sudo apt install ${PKGS} pandoc zip
+    sudo apt install ${PKGS} zip
   fi
 else
   if [ "${arch}" ]
@@ -48,7 +48,7 @@ else
     then
       sudo pacman -Rs ${PKGS}
     else
-      sudo pacman -S --needed ${PKGS} pandoc zip
+      sudo pacman -S --needed ${PKGS} zip
     fi
   else
     have_dnf=`type -p dnf`
@@ -89,7 +89,7 @@ else
       else
         sudo ${PINS} -y groupinstall "Development Tools" "Development Libraries"
         sudo ${PINS} -y install gcc-c++
-        sudo ${PINS} -y install ${PKGS} pandoc zip
+        sudo ${PINS} -y install ${PKGS} zip
         sudo ${PINS} -y install ${FUSION}/${FREE}/${RELRPM}
         sudo ${PINS} -y install ${FUSION}/${NONFREE}/${NONRPM}
         sudo ${PINS} -y install dnf-plugins-core
@@ -131,7 +131,7 @@ else
           sudo ${PINS} -y install dnf-plugins-core
           sudo ${PINS} -y install epel-release
           sudo ${PINS} config-manager --set-enabled powertools
-          sudo ${PINS} -y install ${PKGS} pandoc zip
+          sudo ${PINS} -y install ${PKGS} zip
           sudo ${PINS} -y localinstall --nogpgcheck ${FUSION}/${FREE}/${RELRPM}
           sudo ${PINS} -y localinstall --nogpgcheck ${FUSION}/${NONFREE}/${NONRPM}
           sudo ${PINS} -y update
