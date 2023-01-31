@@ -3,7 +3,7 @@
 pkgname=mpplus-essentia
 pkgver=v1.0.1r2
 pkgrel=1
-pkgdesc="NCurses character based MPD client"
+pkgdesc="C++ library for audio analysis and audio-based music information retrieval"
 arch=('x86_64' 'armv7h')
 url="https://github.com/doctorfree/mpplus-essentia"
 license=('AGPL3')
