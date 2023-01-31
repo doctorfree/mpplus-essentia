@@ -21,7 +21,7 @@ prepare() {
 
     cd ${PROJ}
     makepkg
-    sudo pacman -S libgaia2*.zst
+    sudo pacman -U --noconfirm libgaia2*.zst
   }
 }
 
