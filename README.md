@@ -48,7 +48,10 @@ in-the-box and signal processing algorithms, is easily expandable and allows
 for both research experiments and development of large-scale industrial
 applications.
 
-Documentation online: http://essentia.upf.edu
+The MusicPlayerPlus project maintains an extensive and detailed setup, usage,
+and configuration [guide for the Beets xtractor plugin](https://github.com/doctorfree/MusicPlayerPlus/tree/master/beets#automated-audio-analysis-and-audio-based-information-retrieval).
+
+Essentia Documentation online: http://essentia.upf.edu
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
