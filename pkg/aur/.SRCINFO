@@ -1,6 +1,6 @@
 pkgbase = mpplus-essentia
 	pkgdesc = C++ library for audio analysis and audio-based music information retrieval
-	pkgver = v1.0.1r2
+	pkgver = v1.0.2r1
 	pkgrel = 1
 	url = https://github.com/doctorfree/mpplus-essentia
 	install = mpplus-essentia.install

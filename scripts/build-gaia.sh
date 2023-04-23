@@ -32,6 +32,9 @@ usage() {
     exit 1
 }
 
+# Avoid using Homebrew's pkg-config
+export PATH="/bin:/usr/bin:/usr/local/bin:${PATH}"
+
 PROJ=gaia
 CONFIGURE_ONLY=
 INSTALL=

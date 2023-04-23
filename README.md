@@ -1,5 +1,12 @@
 ## Mpplus-Essentia - Acoustic metadata analysis and extraction
 
+[![Build wheels status](https://github.com/doctorfree/mpplus-essentia/actions/workflows/build-wheels-cibuildwheel.yml/badge.svg)](https://github.com/doctorfree/mpplus-essentia/actions/workflows/build-wheels-cibuildwheel.yml)
+[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
+
+Essentia is an open-source C++ library for audio analysis and audio-based music information retrieval released under the Affero GPLv3 license. It contains an extensive collection of reusable algorithms which implement audio input/output functionality, standard digital signal processing blocks, statistical characterization of data, and a large set of spectral, temporal, tonal and high-level music descriptors. The library is also wrapped in Python and includes a number of predefined executable extractors for the available music descriptors, which facilitates its use for fast prototyping and allows setting up research experiments very rapidly. Furthermore, it includes a Vamp plugin to be used with Sonic Visualiser for visualization purposes. Essentia is designed with a focus on the robustness of the provided music descriptors and is optimized in terms of the computational cost of the algorithms. The provided functionality, specifically the music descriptors included in-the-box and signal processing algorithms, is easily expandable and allows for both research experiments and development of large-scale industrial applications.
+
+Documentation online: <http://essentia.upf.edu>
+
 The `mpplus-essentia` acoustic metadata extraction package is derived from
 `essentia` and customized for integration with
 [MusicPlayerPlus](https://github.com/doctorfree/MusicPlayerPlus).
@@ -20,7 +27,7 @@ to integrate with each other including
 
 1. [Overview](#overview)
 1. [Dependencies](#dependencies)
-    1. [Installing ffmpeg on RPM based systems](installing-ffmpeg-on-rpm-based-systems)
+   1. [Installing ffmpeg on RPM based systems](installing-ffmpeg-on-rpm-based-systems)
 1. [Requirements](#requirements)
 1. [Installation](#installation)
 1. [Removal](#removal)
@@ -51,20 +58,20 @@ applications.
 The MusicPlayerPlus project maintains an extensive and detailed setup, usage,
 and configuration [guide for the Beets xtractor plugin](https://github.com/doctorfree/MusicPlayerPlus/tree/master/beets#automated-audio-analysis-and-audio-based-information-retrieval).
 
-Essentia Documentation online: http://essentia.upf.edu
+Essentia Documentation online: <http://essentia.upf.edu>
 
 [![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
 ## Dependencies
 
-* [fftw library](http://www.fftw.org/)
-* [tag library](https://taglib.org/)
-* [Eigen](http://eigen.tuxfamily.org/)
-* [Gaia](https://github.com/MTG/gaia)
-* [libavcodec/libavformat/libavutil/libswresample](http://ffmpeg.org/)
-* [libsamplerate](http://www.mega-nerd.com/SRC/)
-* [LibYAML](http://pyyaml.org/wiki/LibYAML)
-* [Chromaprint](https://github.com/acoustid/chromaprint)
+- [fftw library](http://www.fftw.org/)
+- [tag library](https://taglib.org/)
+- [Eigen](http://eigen.tuxfamily.org/)
+- [Gaia](https://github.com/MTG/gaia)
+- [libavcodec/libavformat/libavutil/libswresample](http://ffmpeg.org/)
+- [libsamplerate](http://www.mega-nerd.com/SRC/)
+- [LibYAML](http://pyyaml.org/wiki/LibYAML)
+- [Chromaprint](https://github.com/acoustid/chromaprint)
 
 ### Installing ffmpeg on RPM based systems
 
@@ -130,15 +137,15 @@ Package Manager (RPM).
 Mpplus-Essentia has been tested successfully on the following platforms:
 
 - **Arch Linux 2022.07.01**
-    - `mpplus-essentia_<version>-<release>-x86_64.pkg.tar.zst`
+  - `mpplus-essentia_<version>-<release>-x86_64.pkg.tar.zst`
 - **Ubuntu Linux 20.04**
-    - `mpplus-essentia_<version>-<release>.amd64.deb`
+  - `mpplus-essentia_<version>-<release>.amd64.deb`
 - **Fedora Linux 36**
-    - `mpplus-essentia_<version>-<release>.x86_64.rpm`
+  - `mpplus-essentia_<version>-<release>.x86_64.rpm`
 - **CentOS Linux 8**
-    - `mpplus-essentia_<version>-<release>.x86_64.rpm`
+  - `mpplus-essentia_<version>-<release>.x86_64.rpm`
 - **Raspbian Linux 11**
-    - `mpplus-essentia_<version>-<release>.armhf.deb`
+  - `mpplus-essentia_<version>-<release>.armhf.deb`
 
 ### Debian package installation
 
@@ -158,7 +165,9 @@ Install the mpplus-essentia package by executing the command
 ```console
 sudo apt install ./mpplus-essentia_<version>-<release>.amd64.deb
 ```
+
 or
+
 ```console
 sudo dpkg -i ./mpplus-essentia_<version>-<release>.amd64.deb
 ```
@@ -168,7 +177,9 @@ or, on a Raspberry Pi:
 ```console
 sudo apt install ./mpplus-essentia_<version>-<release>.armhf.deb
 ```
+
 or
+
 ```console
 sudo dpkg -i ./mpplus-essentia_<version>-<release>.armhf.deb
 ```
@@ -195,7 +206,9 @@ Install the mpplus-essentia package by executing the command
 ```console
 sudo yum localinstall ./mpplus-essentia_<version>-<release>.x86_64.rpm
 ```
+
 or
+
 ```console
 sudo rpm -i ./mpplus-essentia_<version>-<release>.x86_64.rpm
 ```
@@ -240,7 +253,9 @@ package by executing the command:
 ```console
     sudo apt remove mpplus-essentia
 ```
+
 or
+
 ```console
     sudo dpkg -r mpplus-essentia
 ```
@@ -252,7 +267,9 @@ package by executing the command:
 ```console
     sudo yum remove mpplus-essentia
 ```
+
 or
+
 ```console
     sudo rpm -e mpplus-essentia
 ```
@@ -277,9 +294,11 @@ script in the mpplus-essentia source directory:
 ## Quick start
 
 Quick start using Python:
-- http://essentia.upf.edu/documentation/essentia_python_tutorial.html
+
+- <http://essentia.upf.edu/documentation/essentia_python_tutorial.html>
 
 Command-line tools to compute common music descriptors:
+
 - [doc/sphinxdoc/streaming_extractor_music.rst](doc/sphinxdoc/streaming_extractor_music.rst)
 - [doc/sphinxdoc/extractors_out_of_box.rst](doc/sphinxdoc/extractors_out_of_box.rst)
 
@@ -331,17 +350,17 @@ installation package(s) will be found in `./releases/<version>/`.
 
 mpplus-essentia components have build dependencies on the following:
 
-* libtool
-* automake
-* build-essentials
-* [fftw library](http://www.fftw.org/)
-* [tag library](https://taglib.org/)
-* [Eigen](http://eigen.tuxfamily.org/)
-* [Gaia](https://github.com/MTG/gaia)
-* [libavcodec/libavformat/libavutil/libswresample](http://ffmpeg.org/)
-* [libsamplerate](http://www.mega-nerd.com/SRC/)
-* [LibYAML](http://pyyaml.org/wiki/LibYAML)
-* [Chromaprint](https://github.com/acoustid/chromaprint)
+- libtool
+- automake
+- build-essentials
+- [fftw library](http://www.fftw.org/)
+- [tag library](https://taglib.org/)
+- [Eigen](http://eigen.tuxfamily.org/)
+- [Gaia](https://github.com/MTG/gaia)
+- [libavcodec/libavformat/libavutil/libswresample](http://ffmpeg.org/)
+- [libsamplerate](http://www.mega-nerd.com/SRC/)
+- [LibYAML](http://pyyaml.org/wiki/LibYAML)
+- [Chromaprint](https://github.com/acoustid/chromaprint)
 
 Install build dependencies via:
 
@@ -435,7 +454,7 @@ to a wider variety of Linux platforms and potentially Mac OS X.
 If you have the means and you would like to sponsor mpplus-essentia development,
 testing, platform support, and continued improvement then your monetary
 support could play a very critical role. A little bit goes a long way
-in mpplus-essentia. For example, a bootable USB SSD device could serve as a 
+in mpplus-essentia. For example, a bootable USB SSD device could serve as a
 means of porting and testing support for additional platforms. Or, a
 decent cup of coffee could be the difference between a bug filled
 release and a glorious musical adventure.
@@ -484,4 +503,3 @@ After making your changes simply copy the revised script to `/usr/bin`
 or `/usr/share/mpplus-essentia/scripts` and test your changes.
 
 Feel free to email me at github@ronrecord.com with questions or comments.
-
