@@ -1,6 +1,6 @@
 #!/bin/bash
 
-sudo rm -rf dist releases gaia mpplus-essentia
+sudo rm -rf dist releases gaia mpplus-essentia build
 
 python3 waf distclean
 rm -f doc/sphinxdoc/Makefile
