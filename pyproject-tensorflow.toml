@@ -1,6 +1,6 @@
 [tool.cibuildwheel.linux]
 
-manylinux-x86_64-image = "mtgupf/essentia-builds:manylinux2014_x86_64"
+manylinux-x86_64-image = "docupf/essentia-builds:manylinux2014_x86_64"
 
 # Only support x86_64 for essentia-tensorflow
 build = "cp**-manylinux_x86_64"
