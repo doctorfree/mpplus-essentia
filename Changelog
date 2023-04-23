@@ -126,10 +126,3 @@ Essentia 2.0:
  - Much better documentation, more python examples
  - Bugfixes, more unittests, etc.
 
-
-
-      ----------------------------------------------------------------------
-
-Essentia 2.1:
- - First release with MusicPlayerPlus integration.
- - Add pre-trained support vector machine (SVM) models to release packages.
